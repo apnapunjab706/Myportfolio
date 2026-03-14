@@ -1,0 +1,75 @@
+:root {
+    --bg-color: #0a0a0a;
+    --card-bg: #161616;
+    --accent-color: #00f2ff; /* Electric Blue */
+    --text-main: #ffffff;
+    --text-dim: #b0b0b0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    background: rgba(10, 10, 10, 0.9);
+    position: sticky;
+    top: 0;
+}
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav ul li a { color: var(--text-main); text-decoration: none; font-weight: bold; }
+
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #112233 0%, #0a0a0a 100%);
+}
+
+.highlight { color: var(--accent-color); }
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--accent-color);
+    color: #000;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 50px 5%;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
