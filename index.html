@@ -3,68 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanvir Singh | Portfolio</title>
+    <title>Tanvir Singh | Executive Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav>
-        <div class="logo">TANVIR<span class="gold">SINGH</span></div>
-        <ul>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Roles</a></li>
-            <li><a href="https://instagram.com/txnvir_x6610" target="_blank">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">TANVIR <span class="accent-gold">SINGH</span></div>
+            <div class="nav-links">
+                <a href="#ventures">Ventures</a>
+                <a href="#expertise">Expertise</a>
+                <a href="https://instagram.com/txnvir_x6610" class="contact-cta">Connect</a>
+            </div>
+        </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-content">
-            <h1>Tanvir Singh</h1>
-            <p class="subtitle">Entrepreneur & <span class="blue">Systems Administrator</span></p>
-            <div class="social-links">
-                <a href="https://instagram.com/txnvir_x6610"><i class="fab fa-instagram"></i> @txnvir_x6610</a>
-            </div>
+        <div class="hero-inner">
+            <span class="eyebrow">Entrepreneur & Systems Administrator</span>
+            <h1>Architecting Digital <span class="accent-blue">Infrastructure.</span></h1>
+            <p>Specializing in high-performance server environments and community-driven digital assets.</p>
         </div>
     </header>
 
-    <section id="projects">
-        <h2 class="section-title">Major <span class="gold">Projects</span></h2>
-        <div class="grid">
-            <div class="card highlight-card">
-                <div class="card-tag">Co-Founder</div>
-                <h3>boltbyte.store</h3>
-                <p>Premium Minecraft Hosting infrastructure. Managing Discord community and billing panel backend.</p>
-                <a href="https://boltbyte.store" class="link-btn">Visit Site</a>
-            </div>
+    <section id="ventures">
+        <div class="container">
+            <h2 class="section-label">Selected Ventures</h2>
+            <div class="venture-grid">
+                
+                <div class="venture-card">
+                    <div class="card-header">
+                        <span class="role-badge">Co-Founder</span>
+                        <h3>BoltByte Hosting</h3>
+                    </div>
+                    <p>Directing backend operations and billing infrastructure for a premium Minecraft hosting provider. Overseeing technical scalability and community governance.</p>
+                    <a href="https://boltbyte.store" class="text-link">boltbyte.store →</a>
+                </div>
 
-            <div class="card">
-                <div class="card-tag gold-tag">Founder</div>
-                <h3>Customs Hub</h3>
-                <p>Professional custom Discord server architecture and setup services. Currently Available.</p>
+                <div class="venture-card">
+                    <div class="card-header">
+                        <span class="role-badge">Founder</span>
+                        <h3>Customs Hub</h3>
+                    </div>
+                    <p>Consultancy specializing in bespoke Discord architecture. Designing high-retention community frameworks for creators and brands.</p>
+                    <span class="status-tag">Status: Active</span>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="experience">
-        <h2 class="section-title">Administration & <span class="blue">Communities</span></h2>
-        <div class="grid">
-            <div class="card small">
-                <h3>SteveJatt Community</h3>
-                <span class="role">Co-Owner</span>
-                <p>Managing the official community for YouTuber Steve Jatt (Close Friends).</p>
-            </div>
-            <div class="card small">
-                <h3>Apna Punjab SMP</h3>
-                <span class="role">Admin</span>
-                <p>Official Minecraft Server. Join at: <code class="gold">apnapunjab.fun</code></p>
+    <section id="expertise">
+        <div class="container">
+            <h2 class="section-label">Community & Administration</h2>
+            <div class="expertise-list">
+                <div class="exp-item">
+                    <div class="exp-meta">
+                        <span class="blue-dot"></span>
+                        <h4>SteveJatt Community</h4>
+                    </div>
+                    <p><strong>Co-Owner:</strong> Managing strategic growth and operational safety for a prominent creator community.</p>
+                </div>
+                <div class="exp-item">
+                    <div class="exp-meta">
+                        <span class="blue-dot"></span>
+                        <h4>Apna Punjab SMP</h4>
+                    </div>
+                    <p><strong>Administrator:</strong> Technical oversight of the regional flagship server. <br>Network Node: <code>apnapunjab.fun</code></p>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Tanvir Singh. All rights reserved.</p>
-        <p class="footer-credit">Made by IG: <span class="gold">txnvir_x6610</span></p>
+        <div class="footer-content">
+            <p>&copy; 2026 Tanvir Singh. All rights reserved.</p>
+            <p class="footer-sub">Verified Identity: <span class="accent-gold">@txnvir_x6610</span></p>
+        </div>
     </footer>
 
 </body>
