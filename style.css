@@ -1,75 +1,114 @@
 :root {
-    --bg-color: #0a0a0a;
-    --card-bg: #161616;
-    --accent-color: #00f2ff; /* Electric Blue */
-    --text-main: #ffffff;
-    --text-dim: #b0b0b0;
+    --black: #050505;
+    --dark-grey: #121212;
+    --gold: #d4af37;
+    --gold-glow: rgba(212, 175, 55, 0.3);
+    --blue: #0077ff;
+    --blue-glow: rgba(0, 119, 255, 0.4);
+    --white: #ffffff;
+    --text-muted: #a0a0a0;
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
+/* Typography & Accents */
+.gold { color: var(--gold); }
+.blue { color: var(--blue); }
+.section-title { text-align: center; margin: 50px 0; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; }
+
+/* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 2rem 5%;
-    background: rgba(10, 10, 10, 0.9);
+    align-items: center;
+    padding: 25px 8%;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
 }
 
+.logo { font-weight: 900; font-size: 1.5rem; letter-spacing: 1px; }
 nav ul { display: flex; list-style: none; }
-nav ul li { margin-left: 20px; }
-nav ul li a { color: var(--text-main); text-decoration: none; font-weight: bold; }
+nav ul li { margin-left: 30px; }
+nav ul li a { text-decoration: none; color: var(--white); font-weight: 500; transition: 0.3s; }
+nav ul li a:hover { color: var(--gold); }
 
+/* Hero Section */
 .hero {
-    height: 80vh;
+    height: 70vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background: radial-gradient(circle at center, #112233 0%, #0a0a0a 100%);
+    background: radial-gradient(circle at top right, var(--blue-glow), transparent),
+                radial-gradient(circle at bottom left, var(--gold-glow), transparent);
 }
 
-.highlight { color: var(--accent-color); }
+.hero h1 { font-size: 4rem; margin-bottom: 10px; }
+.subtitle { font-size: 1.5rem; color: var(--text-muted); }
 
-.btn {
-    margin-top: 20px;
-    padding: 12px 30px;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: var(--accent-color);
-    color: #000;
-}
-
-.project-grid {
+/* Grid & Cards */
+.grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 50px 5%;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 0 8% 80px;
 }
 
-.project-card {
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 8px;
-    border-bottom: 3px solid var(--accent-color);
+.card {
+    background: var(--dark-grey);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #222;
+    position: relative;
+    transition: transform 0.3s, border-color 0.3s;
 }
 
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--blue);
+}
+
+.highlight-card { border-left: 5px solid var(--blue); }
+
+.card-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    background: var(--blue);
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.gold-tag { background: var(--gold); color: black; }
+
+.link-btn {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid var(--gold);
+}
+
+.role { color: var(--gold); font-size: 0.9rem; font-weight: bold; display: block; margin-bottom: 10px; }
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 40px;
-    font-size: 0.8rem;
-    color: var(--text-dim);
-}
+    padding: 60px 0;
+    border-top: 1px solid #222;
+    color: var(--text-muted);
+    }
