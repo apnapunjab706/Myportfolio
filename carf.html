@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Scorpio-N Z8 | Blue & Gold Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --electric-blue: #00d2ff; --gold: #d4af37; }
+        body { background-color: #000000; color: #ffffff; font-family: 'Inter', sans-serif; }
+        
+        /* Typography */
+        .heading-font { font-family: 'Syncopate', sans-serif; }
+        
+        /* Gradients & Glows */
+        .blue-gold-gradient {
+            background: linear-gradient(90deg, var(--electric-blue), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .blue-glow { box-shadow: 0 0 20px rgba(0, 210, 255, 0.2); }
+        .gold-border { border: 1px solid rgba(212, 175, 55, 0.3); }
+        
+        /* Video Overlay with Blue Tint */
+        .video-tint {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,210,255,0.05), #000000);
+        }
+
+        /* Animation */
+        @keyframes pulse-blue {
+            0% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 210, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0); }
+        }
+        .active-pulse { animation: pulse-blue 2s infinite; }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 p-6 flex justify-between items-center bg-black/60 backdrop-blur-lg border-b border-white/5">
+        <div class="heading-font text-xl font-bold tracking-tighter">
+            <span class="text-[#00d2ff]">S4</span><span class="text-[#d4af37]">SCORPIO</span>
+        </div>
+        <div class="flex gap-4">
+            <a href="https://instagram.com/_s4scorpio" class="text-[10px] tracking-[0.3em] font-bold text-gray-400 hover:text-[#00d2ff] transition-colors">INSTAGRAM</a>
+        </div>
+    </nav>
+
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+            <source src="videos/car-bg.mp4" type="video/mp4">
