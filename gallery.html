@@ -3,57 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINEMA | Scorpio-N Showcase</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Gallery | Scorpio-N Z8</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/by-id/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    
     <style>
-        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; }
-        .gold-accent { color: #d4af37; }
-        .blue-glow:hover { box-shadow: 0 0 40px rgba(0, 210, 255, 0.2); border-color: #00d2ff; }
-        .gallery-img { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        .gallery-img:hover { transform: scale(1.03); }
+        :root { --blue-glow: rgba(0, 210, 255, 0.1); --gold: #d4af37; }
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; overflow-x: hidden; }
+        .gold-accent { color: var(--gold); }
+        .blue-accent { color: #00d2ff; }
+        .border-gold { border-color: rgba(212, 175, 55, 0.2); }
+        
+        /* Premium Glow Effects */
+        .cinema-glow { box-shadow: 0 0 60px var(--blue-glow); }
+        .video-overlay { background: linear-gradient(to top, #050505 5%, rgba(0,0,0,0.2) 50%, transparent 100%); }
+        
+        /* Masonry Grid Setup (Tailwind handles base, this is refined) */
+        .masonry-item { break-inside: avoid; margin-bottom: 2rem; }
+        .masonry-container { column-count: 3; column-gap: 2rem; }
+        @media (max-w: 768px) { .masonry-container { column-count: 1; } }
+        @media (min-w: 769px) and (max-w: 1024px) { .masonry-container { column-count: 2; } }
+
+        /* Smooth Lightbox & Image Transition */
+        .lb-outerContainer, .lb-dataContainer { border: 1px solid var(--gold); background-color: #000; }
+        .lb-data .lb-caption { font-weight: 900; color: #d4af37; text-transform: uppercase; font-size: 10px; tracking: 0.2em; }
+        
+        /* Entrance Animation */
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 1s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body>
+<body class="bg-[#050505]">
 
-    <nav class="p-6 flex justify-between items-center border-b border-zinc-900 sticky top-0 bg-black/90 backdrop-blur-md z-50">
-        <a href="index.html" class="text-xs tracking-[0.4em] text-zinc-500 hover:text-white transition-all uppercase flex items-center gap-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Back to Home
-        </a>
-        <div class="text-xl font-black italic">GALLERY</div>
+    <nav class="flex justify-between items-center p-6 border-b border-zinc-900 sticky top-0 z-50 bg-black/90 backdrop-blur-md">
+        <a href="index.html" class="text-2xl font-black tracking-tighter uppercase italic hover:scale-105 transition-all">
+            <span class="blue-accent">S4</span><span class="gold-accent">SCORPIO</span>
+        </div>
+        <ul class="flex space-x-8 text-[10px] uppercase tracking-[0.4em] font-bold">
+            <li>
+                <a href="index.html" class="text-zinc-500 hover:text-white transition-all duration-300 cursor-pointer">HOME</a>
+            </li>
+        </ul>
+        <a href="https://instagram.com/_s4scorpio" target="_blank" class="text-[10px] font-bold tracking-widest border border-zinc-800 px-6 py-2 hover:border-[#00d2ff] hover:blue-accent transition-all">FOLLOW IG</a>
     </nav>
 
-    <header class="py-20 text-center">
-        <h1 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter">Cinematic <span class="gold-accent text-blue-400">Shots</span></h1>
-        <p class="text-zinc-600 tracking-[0.5em] uppercase text-[10px] mt-4">Scorpio-N Z8 Select • Black Edition</p>
+    <header class="relative h-[60vh] flex items-center justify-center overflow-hidden border-b border-zinc-900">
+        <div class="absolute inset-0 bg-black/20 video-overlay z-10"></div>
+        <img src="https://images.unsplash.com/photo-1596707323214-41d6be465c40?q=80&w=1920&h=1080" alt="Scorpio Detail" class="absolute inset-0 w-full h-full object-cover grayscale opacity-40">
+        
+        <div class="relative z-20 text-center px-4">
+            <h1 class="reveal active text-[10px] tracking-[0.8em] text-[#d4af37] mb-6 uppercase">Z8 Select Edition</h1>
+            <h2 class="reveal active text-7xl md:text-8xl font-black uppercase italic leading-none tracking-tighter blue-accent">
+                CINEMA<span class="gold-accent">.</span>
+            </h2>
+            <p class="reveal active mt-6 text-zinc-500 tracking-[0.3em] uppercase text-xs md:text-sm font-light">The Photographic Journey</p>
+        </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 pb-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section class="max-w-7xl mx-auto py-24 px-6 reveal">
+        <div class="flex justify-between items-end mb-16 border-b border-zinc-900 pb-6">
+            <h3 class="text-[11px] font-bold blue-accent uppercase tracking-[0.5em]">The Vault</h3>
+            <span class="text-[10px] text-zinc-700 tracking-[0.3em] uppercase pb-2">Updated: Nov 2024</span>
+        </div>
+        
+        <div class="masonry-container">
             
-            <div class="gallery-img bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 blue-glow">
-                <img src="images/car-1.jpg" alt="Front View" class="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700">
+            <a href="https://images.unsplash.com/photo-1517524204709-ef49d892040e?q=80&w=800&h=1200" data-lightbox="scorpio-vault" data-title="Z8 SELECT DRL" class="masonry-item group relative overflow-hidden block rounded-2xl border border-zinc-800 hover:border-[#00d2ff] transition-all cinema-glow">
+                <img src="https://images.unsplash.com/photo-1517524204709-ef49d892040e?q=80&w=800&h=1200" alt="Portrait Image" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
+                <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                    <p class="text-[9px] uppercase font-bold text-gray-400 group-hover:blue-accent">Phagwara | Night Shoot</p>
+                </div>
+            </a>
+
+            <div class="masonry-item group relative overflow-hidden rounded-2xl border border-zinc-800 hover:border-[#00d2ff] transition-all cinema-glow">
+                <video loop muted playsinline class="roller-video w-full h-full object-cover transition-all duration-700 group-hover:scale-105" data-original-opacity="0.6">
+                    <source src="videos/roller-clip.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                    <p class="text-[9px] uppercase font-bold text-gray-400 group-hover:gold-accent">Roller | 2.2L mHawk</p>
+                </div>
             </div>
 
-            <div class="gallery-img bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 blue-glow">
-                <img src="images/car-2.jpg" alt="Side Profile" class="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700">
-            </div>
+            <a href="https://images.unsplash.com/photo-1563823439055-08103c8b5495?q=80&w=800&h=800" data-lightbox="scorpio-vault" data-title="STEALTH BLACK FINISH" class="masonry-item group relative overflow-hidden block rounded-2xl border border-zinc-800 hover:border-[#00d2ff] transition-all cinema-glow">
+                <img src="https://images.unsplash.com/photo-1563823439055-08103c8b5495?q=80&w=800&h=800" alt="Square Detail" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
+                <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                    <p class="text-[9px] uppercase font-bold text-gray-400 group-hover:blue-accent">Detail | November 2024</p>
+                </div>
+            </a>
 
-            <div class="gallery-img bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 blue-glow">
-                <img src="images/car-3.jpg" alt="Interior" class="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700">
-            </div>
+            <a href="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1200&h=800" data-lightbox="scorpio-vault" data-title="Z-BLACK TINTED WINDOWS" class="masonry-item group relative overflow-hidden block rounded-2xl border border-zinc-800 hover:border-[#00d2ff] transition-all cinema-glow">
+                <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1200&h=800" alt="Landscape Shot" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
+                <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                    <p class="text-[9px] uppercase font-bold text-gray-400 group-hover:gold-accent">Aesthetic | Midnight Vibe</p>
+                </div>
+            </a>
 
-            <div class="gallery-img bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 blue-glow">
-                <img src="images/car-4.jpg" alt="Detail" class="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700">
-            </div>
+        </div>
+    </section>
 
-            </div>
-    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/by-id/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/by-id/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    
+    <script>
+        // Custom Option 2: Hover Video Playback
+        $('.masonry-item video').each(function() {
+            var $video = $(this);
+            $video.on('mouseenter', function() {
+                $video.css('opacity', '1');
+                this.play();
+            }).on('mouseleave', function() {
+                $video.css('opacity', $video.attr('data-original-opacity'));
+                this.pause();
+                this.currentTime = 0; // Optional: Reset video to start
+            });
+        });
 
-    <footer class="text-center py-10 border-t border-zinc-900">
-        <p class="text-[10px] text-zinc-700 tracking-[0.5em] uppercase font-bold italic">Tanvir Singh Architecture</p>
-    </footer>
-
+        // Entrance animation logic
+        $(window).on('scroll', function() {
+            $('.reveal').each(function() {
+                if ($(this).getBoundingClientRect().top < $(window).height() - 50) {
+                    $(this).addClass('active');
+                }
+            });
+        });
+        // Run once on load to show elements above the fold
+        $('.reveal:first').addClass('active');
+    </script>
 </body>
 </html>
