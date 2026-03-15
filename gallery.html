@@ -4,33 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CINEMA | Scorpio-N Showcase</title>
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/by-id/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     
     <style>
         :root { --blue-glow: rgba(0, 210, 255, 0.1); --gold: #d4af37; }
         body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; overflow-x: hidden; }
         .gold-accent { color: var(--gold); }
         .blue-accent { color: #00d2ff; }
-        .border-gold { border-color: rgba(212, 175, 55, 0.2); }
-        
-        /* Premium Glow Effects */
         .cinema-glow { box-shadow: 0 0 60px var(--blue-glow); }
         .video-overlay { background: linear-gradient(to top, #050505 5%, rgba(0,0,0,0.2) 50%, transparent 100%); }
-        
-        /* Masonry Grid Setup (Tailwind handles base, this is refined) */
         .masonry-item { break-inside: avoid; margin-bottom: 2rem; }
         .masonry-container { column-count: 3; column-gap: 2rem; }
         @media (max-w: 768px) { .masonry-container { column-count: 1; } }
         @media (min-w: 769px) and (max-w: 1024px) { .masonry-container { column-count: 2; } }
-
-        /* Smooth Lightbox & Image Transition */
-        .lb-outerContainer, .lb-dataContainer { border: 1px solid var(--gold); background-color: #000; }
-        .lb-data .lb-caption { font-weight: 900; color: #d4af37; text-transform: uppercase; font-size: 10px; tracking: 0.2em; }
-        
-        /* Entrance Animation */
         .reveal { opacity: 0; transform: translateY(20px); transition: all 1s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
@@ -38,99 +26,54 @@
 <body class="bg-[#050505]">
 
     <nav class="flex justify-between items-center p-6 border-b border-zinc-900 sticky top-0 z-50 bg-black/90 backdrop-blur-md">
-        <a href="index.html" class="text-2xl font-black tracking-tighter uppercase italic hover:scale-105 transition-all">
+        <a href="index.html" class="text-2xl font-black tracking-tighter uppercase italic">
             <span class="blue-accent">S4</span><span class="gold-accent">SCORPIO</span>
-        </div>
+        </a>
         <ul class="flex space-x-8 text-[10px] uppercase tracking-[0.4em] font-bold">
-            <li>
-                <a href="index.html" class="text-zinc-500 hover:text-white transition-all duration-300 cursor-pointer">HOME</a>
-            </li>
+            <li><a href="index.html" class="text-zinc-500 hover:text-white transition-all">HOME</a></li>
         </ul>
-        <a href="https://instagram.com/_s4scorpio" target="_blank" class="text-[10px] font-bold tracking-widest border border-zinc-800 px-6 py-2 hover:border-[#00d2ff] hover:blue-accent transition-all">FOLLOW IG</a>
+        <a href="https://instagram.com/_s4scorpio" target="_blank" class="text-[10px] font-bold tracking-widest border border-zinc-800 px-6 py-2 hover:border-[#00d2ff] transition-all">FOLLOW IG</a>
     </nav>
 
-    <header class="relative h-[60vh] flex items-center justify-center overflow-hidden border-b border-zinc-900">
-        <div class="absolute inset-0 bg-black/20 video-overlay z-10"></div>
-        <img src="https://images.unsplash.com/photo-1596707323214-41d6be465c40?q=80&w=1920&h=1080" alt="Scorpio Detail" class="absolute inset-0 w-full h-full object-cover grayscale opacity-40">
-        
+    <header class="relative h-[40vh] flex items-center justify-center overflow-hidden border-b border-zinc-900">
+        <div class="absolute inset-0 bg-black/40 video-overlay z-10"></div>
+        <img src="images/car1.jpg" class="absolute inset-0 w-full h-full object-cover grayscale opacity-30">
         <div class="relative z-20 text-center px-4">
-            <h1 class="reveal active text-[10px] tracking-[0.8em] text-[#d4af37] mb-6 uppercase">Z8 Select Edition</h1>
-            <h2 class="reveal active text-7xl md:text-8xl font-black uppercase italic leading-none tracking-tighter blue-accent">
-                CINEMA<span class="gold-accent">.</span>
-            </h2>
-            <p class="reveal active mt-6 text-zinc-500 tracking-[0.3em] uppercase text-xs md:text-sm font-light">The Photographic Journey</p>
+            <h1 class="text-6xl md:text-8xl font-black uppercase italic tracking-tighter blue-accent">CINEMA<span class="gold-accent">.</span></h1>
+            <p class="text-zinc-500 tracking-[0.3em] uppercase text-xs">The Photographic Journey</p>
         </div>
     </header>
 
-    <section class="max-w-7xl mx-auto py-24 px-6 reveal">
-        <div class="flex justify-between items-end mb-16 border-b border-zinc-900 pb-6">
-            <h3 class="text-[11px] font-bold blue-accent uppercase tracking-[0.5em]">The Vault</h3>
-            <span class="text-[10px] text-zinc-700 tracking-[0.3em] uppercase pb-2">Updated: Nov 2024</span>
-        </div>
-        
+    <section class="max-w-7xl mx-auto py-20 px-6">
         <div class="masonry-container">
             
-            <a href="https://images.unsplash.com/photo-1517524204709-ef49d892040e?q=80&w=800&h=1200" data-lightbox="scorpio-vault" data-title="Z8 SELECT DRL" class="masonry-item group relative overflow-hidden block rounded-2xl border border-zinc-800 hover:border-[#00d2ff] transition-all cinema-glow">
-                <img src="https://images.unsplash.com/photo-1517524204709-ef49d892040e?q=80&w=800&h=1200" alt="Portrait Image" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
-                <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                    <p class="text-[9px] uppercase font-bold text-gray-400 group-hover:blue-accent">Phagwara | Night Shoot</p>
-                </div>
+            <a href="images/car1.jpg" data-lightbox="scorpio" class="masonry-item group relative overflow-hidden block rounded-2xl border border-zinc-800 hover:border-[#00d2ff] transition-all cinema-glow">
+                <img src="images/car1.jpg" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
             </a>
 
-            <div class="masonry-item group relative overflow-hidden rounded-2xl border border-zinc-800 hover:border-[#00d2ff] transition-all cinema-glow">
-                <video loop muted playsinline class="roller-video w-full h-full object-cover transition-all duration-700 group-hover:scale-105" data-original-opacity="0.6">
+            <div class="masonry-item group relative overflow-hidden rounded-2xl border border-zinc-800 hover:border-gold transition-all">
+                <video loop muted playsinline class="w-full h-full object-cover opacity-60 hover:opacity-100 transition-all duration-700" onmouseover="this.play()" onmouseout="this.pause(); this.currentTime=0;">
                     <source src="videos/roller-clip.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
-                <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                    <p class="text-[9px] uppercase font-bold text-gray-400 group-hover:gold-accent">Roller | 2.2L mHawk</p>
-                </div>
             </div>
 
-            <a href="https://images.unsplash.com/photo-1563823439055-08103c8b5495?q=80&w=800&h=800" data-lightbox="scorpio-vault" data-title="STEALTH BLACK FINISH" class="masonry-item group relative overflow-hidden block rounded-2xl border border-zinc-800 hover:border-[#00d2ff] transition-all cinema-glow">
-                <img src="https://images.unsplash.com/photo-1563823439055-08103c8b5495?q=80&w=800&h=800" alt="Square Detail" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
-                <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                    <p class="text-[9px] uppercase font-bold text-gray-400 group-hover:blue-accent">Detail | November 2024</p>
-                </div>
+            <a href="images/car2.jpg" data-lightbox="scorpio" class="masonry-item group relative overflow-hidden block rounded-2xl border border-zinc-800 hover:border-[#00d2ff] transition-all">
+                <img src="images/car2.jpg" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
             </a>
 
-            <a href="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1200&h=800" data-lightbox="scorpio-vault" data-title="Z-BLACK TINTED WINDOWS" class="masonry-item group relative overflow-hidden block rounded-2xl border border-zinc-800 hover:border-[#00d2ff] transition-all cinema-glow">
-                <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1200&h=800" alt="Landscape Shot" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
-                <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                    <p class="text-[9px] uppercase font-bold text-gray-400 group-hover:gold-accent">Aesthetic | Midnight Vibe</p>
-                </div>
+            <a href="images/car3.jpg" data-lightbox="scorpio" class="masonry-item group relative overflow-hidden block rounded-2xl border border-zinc-800 hover:border-[#00d2ff] transition-all">
+                <img src="images/car3.jpg" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
+            </a>
+
+            <a href="images/car4.jpg" data-lightbox="scorpio" class="masonry-item group relative overflow-hidden block rounded-2xl border border-zinc-800 hover:border-[#00d2ff] transition-all">
+                <img src="images/car4.jpg" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
             </a>
 
         </div>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/by-id/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/by-id/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    
-    <script>
-        // Custom Option 2: Hover Video Playback
-        $('.masonry-item video').each(function() {
-            var $video = $(this);
-            $video.on('mouseenter', function() {
-                $video.css('opacity', '1');
-                this.play();
-            }).on('mouseleave', function() {
-                $video.css('opacity', $video.attr('data-original-opacity'));
-                this.pause();
-                this.currentTime = 0; // Optional: Reset video to start
-            });
-        });
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 
-        // Entrance animation logic
-        $(window).on('scroll', function() {
-            $('.reveal').each(function() {
-                if ($(this).getBoundingClientRect().top < $(window).height() - 50) {
-                    $(this).addClass('active');
-                }
-            });
-        });
-        // Run once on load to show elements above the fold
-        $('.reveal:first').addClass('active');
-    </script>
 </body>
 </html>
