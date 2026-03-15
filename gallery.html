@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Gallery | Scorpio-N Z8</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #050505; color: white; font-family: 'Inter', sans-serif; }
+        .gold-accent { color: #d4af37; }
+        .blue-glow:hover { box-shadow: 0 0 40px rgba(0, 210, 255, 0.2); border-color: #00d2ff; }
+        .gallery-img { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .gallery-img:hover { transform: scale(1.03); }
+    </style>
+</head>
+<body>
+
+    <nav class="p-6 flex justify-between items-center border-b border-zinc-900 sticky top-0 bg-black/90 backdrop-blur-md z-50">
+        <a href="index.html" class="text-xs tracking-[0.4em] text-zinc-500 hover:text-white transition-all uppercase flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Back to Home
+        </a>
+        <div class="text-xl font-black italic">GALLERY</div>
+    </nav>
+
+    <header class="py-20 text-center">
+        <h1 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter">Cinematic <span class="gold-accent text-blue-400">Shots</span></h1>
+        <p class="text-zinc-600 tracking-[0.5em] uppercase text-[10px] mt-4">Scorpio-N Z8 Select • Black Edition</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="gallery-img bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 blue-glow">
+                <img src="images/car-1.jpg" alt="Front View" class="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700">
+            </div>
+
+            <div class="gallery-img bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 blue-glow">
+                <img src="images/car-2.jpg" alt="Side Profile" class="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700">
+            </div>
+
+            <div class="gallery-img bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 blue-glow">
+                <img src="images/car-3.jpg" alt="Interior" class="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700">
+            </div>
+
+            <div class="gallery-img bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 blue-glow">
+                <img src="images/car-4.jpg" alt="Detail" class="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition-all duration-700">
+            </div>
+
+            </div>
+    </main>
+
+    <footer class="text-center py-10 border-t border-zinc-900">
+        <p class="text-[10px] text-zinc-700 tracking-[0.5em] uppercase font-bold italic">Tanvir Singh Architecture</p>
+    </footer>
+
+</body>
+</html>
