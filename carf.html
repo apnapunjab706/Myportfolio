@@ -4,49 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Scorpio-N Z8 | Blue & Gold Edition</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;900&display=swap" rel="stylesheet">
+    <title>Scorpio-N Z8 | Arshpreet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --electric-blue: #00d2ff; --gold: #d4af37; }
-        body { background-color: #000000; color: #ffffff; font-family: 'Inter', sans-serif; }
+        :root { --blue-glow: rgba(0, 210, 255, 0.15); --gold: #d4af37; }
+        body { font-family: 'Inter', sans-serif; background-color: #050505; }
+        .gold-accent { color: var(--gold); }
+        .blue-accent { color: #00d2ff; }
+        .border-gold { border-color: rgba(212, 175, 55, 0.2); }
         
-        /* Typography */
-        .heading-font { font-family: 'Syncopate', sans-serif; }
+        /* Premium Glow Effects */
+        .blue-shadow { box-shadow: 0 0 30px var(--blue-glow); }
+        .video-overlay { background: linear-gradient(to top, #050505 5%, rgba(0,0,0,0.4) 50%, transparent 100%); }
         
-        /* Gradients & Glows */
-        .blue-gold-gradient {
-            background: linear-gradient(90deg, var(--electric-blue), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .blue-glow { box-shadow: 0 0 20px rgba(0, 210, 255, 0.2); }
-        .gold-border { border: 1px solid rgba(212, 175, 55, 0.3); }
-        
-        /* Video Overlay with Blue Tint */
-        .video-tint {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,210,255,0.05), #000000);
-        }
-
-        /* Animation */
-        @keyframes pulse-blue {
-            0% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(0, 210, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 210, 255, 0); }
-        }
-        .active-pulse { animation: pulse-blue 2s infinite; }
+        /* Hover Effects */
+        .spec-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .spec-card:hover { border-color: #00d2ff; transform: translateY(-5px); box-shadow: 0 10px 40px rgba(0, 210, 255, 0.1); }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body class="text-white">
 
-    <nav class="fixed w-full z-50 p-6 flex justify-between items-center bg-black/60 backdrop-blur-lg border-b border-white/5">
-        <div class="heading-font text-xl font-bold tracking-tighter">
-            <span class="text-[#00d2ff]">S4</span><span class="text-[#d4af37]">SCORPIO</span>
+    <nav class="flex justify-between items-center p-6 border-b border-zinc-900 sticky top-0 z-50 bg-black/90 backdrop-blur-md">
+        <div class="text-2xl font-black tracking-tighter uppercase italic">
+            <span class="blue-accent">S4</span><span class="gold-accent">SCORPIO</span>
         </div>
-        <div class="flex gap-4">
-            <a href="https://instagram.com/_s4scorpio" class="text-[10px] tracking-[0.3em] font-bold text-gray-400 hover:text-[#00d2ff] transition-colors">INSTAGRAM</a>
-        </div>
+        <ul class="hidden md:flex space-x-8 text-[10px] uppercase tracking-[0.4em] text-zinc-500 font-bold">
+            <li class="hover:text-white cursor-pointer transition-colors">The Build</li>
+            <li class="hover:text-white cursor-pointer transition-colors">Sound</li>
+            <li class="hover:text-white cursor-pointer transition-colors">Owner</li>
+        </ul>
+        <a href="https://instagram.com/_s4scorpio" target="_blank" class="text-[10px] font-bold tracking-widest border border-zinc-800 px-6 py-2 hover:border-[#00d2ff] hover:blue-accent transition-all">FOLLOW IG</a>
     </nav>
 
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
-        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-60">
             <source src="videos/car-bg.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 video-overlay z-10"></div>
+        
+        <div class="relative z-20 text-center px-4">
+            <h2 class="text-[10px] tracking-[0.8em] text-zinc-400 mb-6 uppercase">Big Daddy of SUVs</h2>
+            <h1 class="text-6xl md:text-9xl font-black uppercase italic leading-none tracking-tighter">
+                SCORPIO<span class="gold-accent">-</span><span class="blue-accent">N</span>
+            </h1>
+            <p class="mt-6 text-zinc-400 tracking-[0.3em] uppercase text-xs md:text-sm font-light">
+                Z8 Select Diesel <span class="mx-2 text-zinc-700">|</span> Arshpreet
+            </p>
+            <div class="mt-12 flex justify-center">
+                <div class="h-16 w-[1px] bg-gradient-to-b from-transparent via-[#00d2ff] to-transparent"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto py-32 px-6">
+        <div class="flex justify-between items-end mb-16">
+            <h2 class="text-3xl font-light tracking-tight italic uppercase">Technical <span class="font-black gold-accent">Specs</span></h2>
+            <span class="text-[10px] text-zinc-600 tracking-[0.5em] uppercase pb-2">Status: Fully Built</span>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="spec-card bg-zinc-950 p-10 border border-zinc-900 h-full relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-blue-500/5 blur-3xl"></div>
+                <span class="text-[10px] text-zinc-600 uppercase tracking-widest block mb-6">Powerplant</span>
+                <h3 class="text-2xl font-bold mb-4 uppercase italic">2.2L mHawk</h3>
+                <p class="text-zinc-500 text-sm leading-relaxed font-light">Diesel heartbeat with Automatic Transmission. Performance tuned for the streets.</p>
+            </div>
+
+            <div class="spec-card bg-zinc-950 p-10 border border-zinc-900 h-full relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-yellow-500/5 blur-3xl"></div>
+                <span class="text-[10px] text-zinc-600 uppercase tracking-widest block mb-6">Exterior</span>
+                <h3 class="text-2xl font-bold mb-4 uppercase italic">Stealth Black</h3>
+                <p class="text-zinc-500 text-sm leading-relaxed font-light">Z-Black Tinted Windows. Dark aesthetic paired with massive road presence.</p>
+            </div>
+
+            <div class="spec-card bg-zinc-950 p-10 border border-zinc-900 h-full relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-16 h-16 bg-blue-500/5 blur-3xl"></div>
+                <span class="text-[10px] text-zinc-600 uppercase tracking-widest block mb-6">Acoustics</span>
+                <h3 class="text-2xl font-bold mb-4 uppercase italic">High-Fidelity</h3>
+                <p class="text-zinc-500 text-sm leading-relaxed font-light">4 Aura Mid-Rangs & 2 Pioneer 1212D4. Engineered for ground-shaking bass.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-t border-zinc-900 py-32 bg-[#030303]">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="relative">
+                <div class="absolute -inset-4 bg-blue-500/10 blur-2xl rounded-full"></div>
+                <div class="relative border-gold border p-2 rounded-2xl blue-shadow">
+                    <img src="images/owner.jpg" alt="Arshpreet" class="w-full aspect-square object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-1000">
+                </div>
+            </div>
+            <div>
+                <h3 class="text-[10px] blue-accent uppercase tracking-[0.6em] mb-6 font-bold italic underline decoration-gold underline-offset-8">The Visionary</h3>
+                <h2 class="text-6xl font-black italic uppercase leading-none mb-8 tracking-tighter">Arshpreet</h2>
+                <p class="text-zinc-500 text-lg font-light leading-relaxed mb-10 border-l-2 border-gold pl-6">
+                    A statement of power, luxury, and pure dominance. Delivering the Scorpio-N experience since November 2024.
+                </p>
+                <div class="flex gap-16">
+                    <div>
+                        <p class="text-3xl font-bold tracking-tighter italic">Nov '24</p>
+                        <p class="text-[10px] text-zinc-600 uppercase tracking-widest">Delivery</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold gold-accent tracking-tighter italic uppercase">Z8 Select</p>
+                        <p class="text-[10px] text-zinc-600 uppercase tracking-widest">Edition</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-20 border-t border-zinc-900 bg-black">
+        <div class="text-[10px] text-zinc-700 tracking-[0.6em] uppercase mb-4 italic font-bold">
+            Built for <span class="gold-accent">@_s4scorpio</span>
+        </div>
+        <p class="text-[9px] text-zinc-800 uppercase tracking-widest">© 2026 Elite Showcase Architecture</p>
+    </footer>
+
+</body>
+</html>
